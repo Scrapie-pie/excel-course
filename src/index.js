@@ -1,5 +1,4 @@
 import './scss/index.scss'
-
 // eslint-disable-next-line require-jsdoc
 function setIcons() {
     const elems = []
