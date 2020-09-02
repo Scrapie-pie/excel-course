@@ -8,7 +8,9 @@
   "rules": {
     "semi": "off",
     "indent": "off",
-    "comma-style": "off"
+//    "comma-style": "off",
+    "linebreak-style": "off"
+
   },
   "extends": [
     "eslint:recommended",
