@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <title>Pure JavaScript Excel</title>
+</head>
+<body>
+
+<div id="app" class="app">
+    <div class="excel">
+        <header class="header wrapper">
+            <h3 type="text" class="header__title" contenteditable>Имя таблицы</h3>
+            <div class="header__buttons buttons">
+                <button class="button" data-type="delete_forever"></button>
+                <button class="button" data-type="exit_to_app"></button>
+            </div>
+        </header>
+        <section class="toolbar wrapper">
+            <div class="buttons">
+                <button class="button" data-type="format_bold"></button>
+                <button class="button" data-type="format_italic"></button>
+                <button class="button" data-type="format_underline"></button>
+                <button class="button" data-type="format_align_left"></button>
+                <button class="button" data-type="format_align_center"></button>
+                <button class="button" data-type="format_align_right"></button>
+            </div>
+        </section>
+        <section class="formula">
+            <div class="formula__badge">fx</div>
+            <div class="formula__input" contenteditable spellcheck="false"></div>
+        </section>
+    </div>
+
+    <div class="table">
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell">A</div>
+            <div class="cell">B</div>
+            <div class="cell">C</div>
+        </div>
+        <div class="row">
+            <div class="cell">1</div>
+            <div class="cell" contenteditable>text</div>
+            <div class="cell" contenteditable>text</div>
+            <div class="cell" contenteditable>text</div>
+        </div>
+        <div class="row">
+            <div class="cell">2</div>
+            <div class="cell" contenteditable>text</div>
+            <div class="cell" contenteditable>text</div>
+            <div class="cell" contenteditable>text</div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

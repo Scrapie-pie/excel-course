@@ -1,28 +1,27 @@
-const path = require('path')
-    , {CleanWebpackPlugin} = require('clean-webpack-plugin')
-    , HTMLWebpackPlugin = require('html-webpack-plugin')
-    , CopyPlugin = require('copy-webpack-plugin')
-    , MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-    , isProd = process.env.NODE_ENV === 'production'
-    , isDev = !isProd
+const isProd = process.env.NODE_ENV === 'production';
+const isDev = !isProd;
 
-    , filename = (ext) => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`
+const filename = (ext) => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`;
 
-    , jsLoaders = () => {
-        const loaders = [
-            {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env'],
-                },
+const jsLoaders = () => {
+    const loaders = [
+        {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
             },
-        ];
-        if (isDev) loaders.push('eslint-loader')
+        },
+    ];
+    if (isDev) loaders.push('eslint-loader')
 
-        return loaders
-      }
-;
+    return loaders
+};
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -58,7 +57,7 @@ module.exports = {
                 {
                     from: path.resolve(__dirname, 'src/favicon.ico'),
                     to: path.resolve(__dirname, 'dist'),
-                }
+                },
             ],
         } ),
         new MiniCssExtractPlugin( {
