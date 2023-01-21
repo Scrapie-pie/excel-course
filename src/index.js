@@ -1,24 +1,14 @@
-import './scss/index.scss'
-// eslint-disable-next-line require-jsdoc
-function setIcons() {
-    const elems = []
-    for (const elem of document.getElementsByTagName('*')) {
-        if (elem.hasAttribute('data-icon')) {
-            elems.push(elem);
-        }
-    }
-    // eslint-disable-next-line require-jsdoc
-    function set(el) {
-        const contentEl = document.createElement('i')
-        const type = el.dataset.icon
-        contentEl.classList.add('material-icons')
-        contentEl.textContent = type;
-        el.appendChild(contentEl)
-    }
-    for (const el of elems) {
-        set(el)
-    }
-}
+import {Excel} from '@/components/excel/Excel';
+import {Header} from '@/components/header/Header';
+import {Toolbar} from '@/components/toolbar/Toolbar';
+import {Formula} from '@/components/formula/Formula';
+import {Table} from '@/components/table/Table';
+import './scss/index.scss';
+import './temp';
+// eslint-disable-next-line no-unused-vars
+const excel = new Excel('#app', {
+    components: [Header, Toolbar, Formula, Table],
+})
+excel.render()
 
-console.log('Working!')
-setIcons()
+
